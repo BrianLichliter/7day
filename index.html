@@ -1,0 +1,97 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+
+	<title>My Parse App</title>
+	<meta name="description" content="My Parse App">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+</head>
+
+<body>
+	<div id = "titlebar" class = "row">
+		<div class = "col-md-2 text-center">
+			<h1>7day</h1>
+		</div>
+	</div>
+	<div id = "boxdivider">
+	</div>
+	<br>
+	<div id = "boxes">
+		<div id = "category" class = "col-md-6">
+		</div>
+		<div id = "day" class = "col-md-6">
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="addCardModal" tabindex="-1" role="dialog" aria-labelledby="addCardModal" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="addCardModal">New Card</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="Category">Category*</label>
+						<select class="form-control" id="categorySelect">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="Day">Day</label>
+						<select class="form-control" id="daySelect">
+							<option>None</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="Text">Text*</label>
+						<textarea class="form-control" id = "cardText" rows="3"></textarea>
+					</div>
+					<input type = "hidden" id = "modalCardId"></input>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id = "saveCard" data-dismiss="modal">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type = "foo/bar" id = "card">
+		<div class = "col-md-4">
+			<div class = "postit">
+				<%=Text%>
+				<br>
+				<button class = "btn btn-primary btn-xs editCard" id = "<%=id%>" data-toggle="modal" data-target="#addCardModal">Edit
+				</button>
+				<br>
+				<button class = "btn btn-danger btn-xs deleteCard" id = "<%=id%>">Delete
+				</button>
+				<%if (Day) {%>
+				<br>
+				<p>assigned</p>
+				<%}%>
+			</div>
+		</div>
+	</script>
+	<script type = "foo/bar" id = "cardRow">
+		<div id = "<%=Name.replace(/[\s.:]+/g, '')%>">
+			<div class = "col-md-offset-1 col-md-10">
+				<span class = "rowName"><%=Name%></span>
+				<%if (Type == "category") {%>
+				<button class = "btn btn-primary addCard" data-toggle="modal" data-target="#addCardModal">Add</button>
+				<%}%>
+			</div>
+			<div class = "row">
+				<div class = "col-md-offset-2 col-md-9" id = "<%=Name.replace(/[\s.:]+/g, '')%>Cards">
+				</div>
+			</div>
+		</div>
+	</script>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

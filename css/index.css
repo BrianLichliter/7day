@@ -1,0 +1,44 @@
+#titlebar {
+	width: 100%;
+	min-height: 100px;
+	background-color: rgb(120,210,255);
+}
+
+#boxes {
+	height: 500px;
+}
+
+#category {
+	background-color: white;
+	overflow: scroll;
+	height: 100%;
+}
+
+#day {
+	background-color: white;
+	overflow: scroll;
+	height: 100%;
+}
+
+#boxdivider {
+	border-left: 1px solid black;
+	position: absolute;
+	height: 50%;
+	left: 50%;
+	top: 30%;
+	z-index: 1;
+}
+
+.postit {
+	height: 140px;
+	width: 140px;
+	margin: 5px;
+	padding: 10px;
+	background-color: rgb(230, 230, 230);
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.rowName {
+	font-weight: 500;
+	font-size: 2em;
+}
